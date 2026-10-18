@@ -16,6 +16,23 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 
 이 플러그인은 이걸 자동으로 잡아줍니다.
 
+## frontend-design과 맞대결
+
+같은 요청 10개(빵집, 치과, SaaS, 대시보드, 청첩장, 학원, 한옥 숙소, 회원가입, 재즈 페스티벌, 결제)를 두 플러그인에 각각 맡기고, 별도의 Claude가 모바일·데스크톱 스크린샷만 보고 **어느 쪽인지 모르는 상태로** 판정했습니다. 위치 편향을 없애려고 A/B 순서를 바꿔 두 번씩, 총 20회.
+
+![같은 요청, 두 플러그인](docs/compare.png)
+
+| | korean-frontend-design v0.3 | frontend-design |
+|---|---|---|
+| 판정 승수 (20회) | **20** | 0 |
+| 주제에 맞는 개성 | **8.2** | 4.9 |
+| 한글 타이포그래피 | **7.6** | 6.2 |
+| 한국어 문구 | **8.9** | 6.5 |
+| 국내 관행 | **8.3** | 5.8 |
+| 완성도 | **7.2** | 6.2 |
+
+10점 만점 평균. 2026-10-18 측정. 판정자도 AI이고 표본이 10개라는 한계가 있으니 참고용으로 봐 주세요. 직접 재현하려면 `eval/` 폴더를 보세요.
+
 ## 들어 있는 것
 
 | 구성 | 내용 |
@@ -25,6 +42,7 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 | `references/typography.md` | 한글 폰트 선택표와 로드 방법(Pretendard 등), 크기·행간·자간 기준표 |
 | `references/ui-patterns.md` | 약관 전체 동의, 사업자 정보 푸터, 하단 고정 CTA, 상품 카드, 소셜 로그인 버튼, 국내식 폼 |
 | `references/local-services.md` | 다음 우편번호, 카카오·네이버 로그인, 토스페이먼츠·포트원 결제, 카카오맵·네이버 지도, 카카오톡 공유 |
+| `scripts/check_render.py` | 렌더링 검사기 — Chrome으로 375px 화면을 실제로 띄워 가로 넘침, 빈 첫 화면, 숨은 콘텐츠를 잰다 |
 | `scripts/check_korean.py` | 결과물 자동 검사기 (lang="ko", keep-all, 한글 폰트, break-all, 번역체, 해외식 표기, 여백 덮어쓰기, AI 기본값 신호) |
 
 ## 설치
@@ -52,6 +70,18 @@ WARN   index.html:2: 번역체 문구 — 자연스러운 한국어로 다듬으
 ```
 
 오류가 있으면 종료 코드 1이라 CI에도 넣을 수 있습니다.
+
+## 평가 직접 돌리기
+
+```bash
+claude plugin disable korean-frontend-design@korean-frontend-design   # 공정하게 끄고
+bash eval/generate.sh ./results     # 두 플러그인으로 eval/prompts.txt 생성
+bash eval/shoot.sh ./results        # 모바일·데스크톱 스크린샷 (Chrome 필요)
+bash eval/judge.sh ./results        # 블라인드 판정 (순서 바꿔 2회)
+python eval/summarize.py ./results  # 승률·기준별 평균
+```
+
+생성·판정 40회가 돌아서 사용량이 꽤 듭니다.
 
 ## 라이선스
 
