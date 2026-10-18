@@ -1,12 +1,12 @@
 {
-  "name": "korean-frontend-design",
+  "name": "hangeul-craft",
   "description": "한국어 웹 UI를 위한 Claude Code 플러그인 모음",
   "owner": {
     "name": "rolex0331-cloud"
   },
   "plugins": [
     {
-      "name": "korean-frontend-design",
+      "name": "hangeul-craft",
       "source": "./",
       "description": "한국어 웹 UI를 제대로 만드는 프론트엔드 디자인 스킬"
     }

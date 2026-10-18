@@ -1,8 +1,8 @@
 #!/bin/bash
 # 같은 요청으로 두 플러그인의 결과물을 만든다.
 # usage: eval/generate.sh <결과 폴더> [동시 실행 수=5]
-# 비교가 공정하도록, 실행 전 사용자 범위에 설치된 korean-frontend-design은 꺼 둔다:
-#   claude plugin disable korean-frontend-design@korean-frontend-design
+# 비교가 공정하도록, 실행 전 사용자 범위에 설치된 hangeul-craft은 꺼 둔다:
+#   claude plugin disable hangeul-craft@hangeul-craft
 set -u
 OUT="$(cd "$1" 2>/dev/null || mkdir -p "$1" && cd "$1" && pwd)"
 JOBS="${2:-5}"

@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 CRITERIA = ["distinct", "typography", "copy", "local", "polish"]
-CHECKER = Path(__file__).resolve().parent.parent / "skills/korean-frontend-design/scripts/check_korean.py"
+CHECKER = Path(__file__).resolve().parent.parent / "skills/hangeul-craft/scripts/check_korean.py"
 
 
 def checker_counts(html):

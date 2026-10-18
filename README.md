@@ -1,4 +1,4 @@
-# korean-frontend-design
+# hangeul-craft (한글크래프트)
 
 **개성 있는 디자인 + 한국어 완성도. 한국어 웹 화면을 위한 Claude Code 프론트엔드 디자인 플러그인.**
 
@@ -22,7 +22,7 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 
 ![같은 요청, 두 플러그인](docs/compare.png)
 
-| | korean-frontend-design v0.3 | frontend-design |
+| | hangeul-craft v0.3 | frontend-design |
 |---|---|---|
 | 판정 승수 (20회) | **20** | 0 |
 | 주제에 맞는 개성 | **8.2** | 4.9 |
@@ -48,8 +48,8 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 ## 설치
 
 ```bash
-/plugin marketplace add rolex0331-cloud/korean-frontend-design
-/plugin install korean-frontend-design@korean-frontend-design
+/plugin marketplace add rolex0331-cloud/hangeul-craft
+/plugin install hangeul-craft@hangeul-craft
 ```
 
 설치 후 한국어로 화면을 요청하면 자동으로 적용됩니다.
@@ -60,7 +60,7 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 ## 검사기만 따로 쓰기
 
 ```bash
-python skills/korean-frontend-design/scripts/check_korean.py ./src
+python skills/hangeul-craft/scripts/check_korean.py ./src
 ```
 
 ```
@@ -83,7 +83,7 @@ WARN   index.html:2: 번역체 문구 — 자연스러운 한국어로 다듬으
 ## 평가 직접 돌리기
 
 ```bash
-claude plugin disable korean-frontend-design@korean-frontend-design   # 공정하게 끄고
+claude plugin disable hangeul-craft@hangeul-craft   # 공정하게 끄고
 bash eval/generate.sh ./results     # 두 플러그인으로 eval/prompts.txt 생성
 bash eval/shoot.sh ./results        # 모바일·데스크톱 스크린샷 (Chrome 필요)
 bash eval/judge.sh ./results        # 블라인드 판정 (순서 바꿔 2회)
