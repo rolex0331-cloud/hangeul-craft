@@ -1,0 +1,10 @@
+{
+  "name": "korean-frontend-design",
+  "version": "0.1.0",
+  "description": "한국어 웹 UI를 제대로 만드는 프론트엔드 디자인 스킬. 한글 줄바꿈·폰트·자간, 국내 UI 패턴, 원화·날짜 표기, 약관 동의·사업자 정보 푸터, 카카오/네이버/토스 연동 패턴까지.",
+  "author": {
+    "name": "korean-frontend-design contributors"
+  },
+  "keywords": ["frontend", "design", "korean", "한국어", "한글", "typography", "ui"],
+  "license": "MIT"
+}
