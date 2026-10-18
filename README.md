@@ -25,7 +25,7 @@ AI가 만든 UI에 한글을 넣으면 생기는 문제들:
 ## 설치
 
 ```bash
-/plugin marketplace add <GitHub계정>/korean-frontend-design
+/plugin marketplace add rolex0331-cloud/korean-frontend-design
 /plugin install korean-frontend-design@korean-frontend-design
 ```
 
