@@ -1,10 +1,21 @@
 {
   "name": "korean-frontend-design",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "개성 있는 디자인 + 한국어 완성도. 템플릿 같은 AI 디자인을 피하면서 한글 타이포그래피, 한국어 카피, 국내 UI 관행, 카카오·네이버·토스 연동까지 챙기는 프론트엔드 디자인 스킬.",
   "author": {
-    "name": "korean-frontend-design contributors"
+    "name": "rolex0331-cloud",
+    "url": "https://github.com/rolex0331-cloud"
   },
-  "keywords": ["frontend", "design", "korean", "한국어", "한글", "typography", "ui"],
-  "license": "MIT"
+  "keywords": [
+    "frontend",
+    "design",
+    "korean",
+    "한국어",
+    "한글",
+    "typography",
+    "ui"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rolex0331-cloud/korean-frontend-design",
+  "repository": "https://github.com/rolex0331-cloud/korean-frontend-design"
 }
