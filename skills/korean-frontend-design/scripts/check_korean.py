@@ -34,6 +34,14 @@ LINE_RULES = [
     (re.compile(r"것이\s*가능합니다|당신의|성공적으로\s*(완료|처리)|하는\s*것을\s*원하|에\s*의해\s*제공"), "번역체 문구 — 자연스러운 한국어로 다듬으세요"),
     (re.compile(r"\$\s?\d[\d,]*(\.\d{2})?"), "달러 가격 표기 — 국내 서비스라면 12,900원 형식으로 (의도한 경우 무시)"),
     (re.compile(r"text-transform\s*:\s*uppercase|\buppercase\b"), "uppercase는 한글에 효과 없음 — 한글 텍스트라면 굵기·크기로 강조하세요"),
+    (re.compile(r"(?<![-\w])(padding|margin)\s*:\s*[^;{}\s]+\s+0(px)?\s*(;|}|!)"), "세로만 주는 padding/margin 단축 속성 — 같은 요소의 좌우 여백(.wrap 등)을 0으로 덮어써요. padding-block / margin-block을 쓰세요"),
+    (re.compile(r"text-align\s*:\s*justify|\btext-justify\b"), "한글 양쪽 정렬은 띄어쓰기 간격이 들쭉날쭉해져요 — 좌측 정렬로"),
+    # AI 기본값 신호 (주제에 맞게 고른 게 아니라면 바꾸세요)
+    (re.compile(r"[✨🚀💡🎯⚡🔥]"), "AI 기본값: 장식 이모지 — 주제에 맞는 아이콘·이미지로"),
+    (re.compile(r"혁신적인|새로운\s*경험|의\s*모든\s*것|지금\s*바로\s*시작하세요|당신만을\s*위한"), "AI 기본값: 마케팅 상투어 — 구체적인 사실로 설명하세요"),
+    (re.compile(r">\s*(Get Started|Learn More|Sign Up|Submit)\s*<", re.I), "영어 버튼 문구 — 무엇이 일어나는지 한국어로 (예: 체험 수업 신청하기)"),
+    (re.compile(r"#3182F6", re.I), "AI 기본값: 토스 블루 — 핀테크가 아니라면 주제에서 색을 가져오세요"),
+    (re.compile(r"#F4F1EA|#D97757", re.I), "AI 기본값: 크림 배경·테라코타 조합 — 주제에서 색을 가져오세요"),
 ]
 
 
